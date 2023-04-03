@@ -28,14 +28,14 @@ from ShizukaXMusic.utils.logger import play_logs
 from ShizukaXMusic.utils.stream.stream import stream
 
 # Command
-PLAY_COMMAND = get_command("OYNAT_COMMAND")
+PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
 @app.on_message(
     filters.command(PLAY_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @PlayWrapper
-async def oynat_commnd(
+async def play_commnd(
     client,
     message: Message,
     _,
